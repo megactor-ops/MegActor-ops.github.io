@@ -2,7 +2,11 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="description"
+        content="MegActor-Σ: Unlocking Flexible  Mixed-Modal Control in Portrait Animation with Diffusion Transformer">
+  <meta name="keywords" content="Diffusion models, Generative models, Portrait animation, Video generation, Talking head, Multi-modal generation">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MegActor-Σ: Unlocking Flexible  Mixed-Modal Control in Portrait Animation with Diffusion Transformer</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -37,7 +41,879 @@
   <script src="./static/js/index.js"></script>
 </head>
 <body>
-We are still working on this page, thank you for your patience.
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">MegActor-Σ: Unlocking Flexible  Mixed-Modal Control in Portrait Animation with Diffusion Transformer</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <img src="./static/images/MegActor_lite.png" width="15%">
+          <h1 class="title is-1 publication-title">MegActor: Harness the Power of Raw Video for Vivid Portrait Animation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Shurong Yang<sup>*</sup>,</span>
+            <span class="author-block">
+              Huadong Li<sup>*</sup>,</span>
+            <span class="author-block">
+              Juhao Wu<sup>*</sup>,
+            </span>
+            <span class="author-block">
+              Minhao Jing<sup>*</sup>,
+            </span>
+            <span class="author-block">
+              Linze Li<sup></sup>,
+            </span>
+            <span class="author-block">
+              Renhe Ji<sup>‡</sup>,
+            </span>
+          </span>
+          <span class="author-block">
+            Jiajun Liang<sup>‡</sup>,
+          </span>
+          <span class="author-block">
+            Haoqiang Fan<sup></sup>
+          </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><b>Megvii Research</b></span><br>
+            <span class="author-block" style="font-size: medium"><sup>*</sup>Equal contribution</b></span>
+            <span class="author-block" style="font-size: medium"><sup>‡</sup>Corresponding author</b></span>
+          </div>
+
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+
+
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2408.14975"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+
+              <span class="link-block">
+                <a href="https://github.com/megvii-research/MegActor"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+              
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a></span> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
+<section class="section">
+  <div class="container is-max-desktop">
+    <video id="teaser" autoplay muted loop playsinline controls>
+      <source src="./static/videos/output_video.mp4"
+              type="video/mp4">
+    </video><br>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Introduction</h2>
+        <div class="content has-text-justified">
+          <p>
+            Diffusion models have demonstrated superior performance in the field of portrait animation. 
+            However, current approaches relied on either visual or audio modality to control character movements, failing to exploit the potential of mixed-modal control.
+            This challenge arises from the difficulty in balancing the weak control strength of audio modality and the strong control strength of visual modality.
+              </p>
+          <p>
+            To address this issue, we introduce MegActor-Σ: a mixed-modal conditional diffusion transformer (DiT), which can flexibly inject audio and visual modality control signals into portrait animation. 
+            Specifically, we make substantial advancements over its predecessor, MegActor, by leveraging the promising model structure of DiT and integrating audio and visual conditions through advanced modules within the DiT framework.
+            To further achieve flexible combinations of mixed-modal control signals, we propose a ``Modality Decoupling Control" training strategy to balance the control strength between visual and audio modalities, 
+            along with the ``Amplitude Adjustment" inference strategy to freely regulate the motion amplitude of each modality.
+                   </p>
+          <p>
+            Finally, to facilitate extensive studies in this field, we design several dataset evaluation metrics to filter out public datasets and solely use this filtered dataset to train MegActor-Σ.          </p>
+          <p>
+            Extensive experiments demonstrate the superiority of our approach in generating vivid portrait animations, outperforming previous closed-source methods.         </p>
+          <p>
+            The training code, model checkpoint and filtered dataset will be released, hoping to help further develop the open-source community.          </p>
+        </div>
+      </div>
+    </div>
+
+<h2 class="title is-3 " align="center"><br>Visual-Audio Driven</h2>
+<section class="hero is-light is-small"  style="height: 100%;">
+  <div class="hero-body"  style="height: 100%;">
+    <div class="container"  style="height: 100%;">
+      <div id="results-carousel" class="carousel results-carousel"  style="height: 100%;">
+
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v-a/wukong_case_1_4_006.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v-a/Aerith_AAAI_TalkingHead_22.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v-a/Backstory_Astarion_AAAI_TalkingHead_23.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v-a/wukong_case_2_AAAI_CelebVHQ_18.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v-a/wukong_case_3_AAAI_MultiTalk_19.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v-a/Backstory_Karlach_AAAI_TalkingHead_27.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v-a/Backstory_Laezel_AAAI_VoxCeleb_10.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v-a/gale-1715638968284_AAAI_VoxCeleb_5.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v-a/photo-1438761681033-6461ffad8d80_AAAI_CelebVHQ_2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+       
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v-a/u=1698759698,3671050&fm=253&fmt=auto&app=138&f=JPEG_AAAI_MultiTalk_5.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v-a/10_news2_002.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v-a/21_news6_006.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v-a/17-astonishing-facts-about-hidetaka-miyazaki-1697338601_4_006.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v-a/1-shutterstock_588634790-825x465_AAAI_CelebVHQ_18.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v-a/20_news6_003.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v-a/5676598_qmbq_AAAI_CelebVHQ_34.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v-a/584_20200116103517341_AAAI_CelebVHQ_9.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v-a/5_news8_001.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v-a/639a87a227c0a700193e3907_AAAI_Ours_29.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v-a/669348500fb61643212c13500d67feda86ab6447_AAAI_MultiTalk_11.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v-a/95621_crt_0yBo3_10_004.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v-a/ab67706c0000da84508c76d25acfbf1dc9fc0282_AAAI_TalkingHead_12.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+       
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v-a/woman-6328478_960_720_AAAI_CelebVHQ_32.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<h2 class="title is-3 " align="center"><br>Unpaired Visual-Audio Driven</h2>
+<section class="hero is-light is-small"  style="height: 100%;">
+  <div class="hero-body"  style="height: 100%;">
+    <div class="container"  style="height: 100%;">
+      <div id="results-carousel" class="carousel results-carousel"  style="height: 100%;">
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/unpair/10_news2_002_news6_006.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+               
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/unpair/17-astonishing-facts-about-hidetaka-miyazaki-1697338601_4_006_AAAI_MultiTalk_5.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+               
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/unpair/Backstory_Astarion_AAAI_TalkingHead_23_AAAI_VoxCeleb_45.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/unpair/20_news6_003_AAAI_CelebVHQ_25.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+               
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/unpair/21_news6_006_AAAI_CelebVHQ_2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+               
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/unpair/5676598_qmbq_AAAI_CelebVHQ_34_8_009.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+               
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/unpair/5_news8_001_AAAI_MultiTalk_11.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+               
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/unpair/639a87a227c0a700193e3907_AAAI_Ours_29_AAAI_VoxCeleb_15.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+               
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/unpair/95621_crt_0yBo3_10_004_AAAI_MultiTalk_19.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+               
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/unpair/ab67706c0000da84508c76d25acfbf1dc9fc0282_AAAI_TalkingHead_12_AAAI_VoxCeleb_37.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+               
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/unpair/photo-1438761681033-6461ffad8d80_AAAI_CelebVHQ_2_4_006.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+               
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/unpair/u=1698759698,3671050&fm=253&fmt=auto&app=138&f=JPEG_AAAI_MultiTalk_5_AAAI_TalkingHead_2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+               
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/unpair/woman-6328478_960_720_AAAI_CelebVHQ_32_7_007.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<h2 class="title is-3 " align="center"><br>Sole Visual-Driven</h2>
+<section class="hero is-light is-small"  style="height: 100%;">
+  <div class="hero-body"  style="height: 100%;">
+    <div class="container"  style="height: 100%;">
+      <div id="results-carousel" class="carousel results-carousel"  style="height: 100%;">
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v/10_news2_002.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v/17-astonishing-facts-about-hidetaka-miyazaki-1697338601_4_006.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v/Backstory_Astarion_AAAI_TalkingHead_23.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v/1-shutterstock_588634790-825x465_AAAI_CelebVHQ_18.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v/20_news6_003.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v/21_news6_006.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v/5_news8_001.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v/639a87a227c0a700193e3907_AAAI_Ours_29.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v/7b92ca600d4e87451ab31f1e62f40102_AAAI_Ours_34.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src=""
+                    type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v/95621_crt_0yBo3_10_004.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v/ab67706c0000da84508c76d25acfbf1dc9fc0282_AAAI_TalkingHead_12.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v/Backstory_Karlach_AAAI_TalkingHead_27.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v/ElderScrolls3_BlogBanner-890x606_AAAI_VoxCeleb_37.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v/photo-1438761681033-6461ffad8d80_AAAI_CelebVHQ_2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v/u=1698759698,3671050&fm=253&fmt=auto&app=138&f=JPEG_AAAI_MultiTalk_5.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v/woman-6328478_960_720_AAAI_CelebVHQ_32.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<h2 class="title is-3 " align="center"><br>Sole Audio-Driven</h2>
+<section class="hero is-light is-small"  style="height: 100%;">
+  <div class="hero-body"  style="height: 100%;">
+    <div class="container"  style="height: 100%;">
+      <div id="results-carousel" class="carousel results-carousel"  style="height: 100%;">
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/a/10_news2_002.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/a/21_news6_006.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/a/photo-1438761681033-6461ffad8d80_AAAI_CelebVHQ_2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/a/1-shutterstock_588634790-825x465_AAAI_CelebVHQ_18.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/a/17-astonishing-facts-about-hidetaka-miyazaki-1697338601_4_006.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<h2 class="title is-3 " align="center"><br>Audio Weight Scaling</h2>
+<h3 class="title is-4"><br>Audio Scale = 0.5</h3>
+<section class="hero is-light is-small"  style="height: 100%;">
+  <div class="hero-body"  style="height: 100%;">
+    <div class="container"  style="height: 100%;">
+      <div id="results-carousel" class="carousel results-carousel"  style="height: 100%;">
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/audio_scale/0.3_20_AAAI_MultiTalk_1.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/audio_scale/0.3_639a87a227c0a700193e3907_AAAI_VoxCeleb_10.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/audio_scale/0.3_wukong_case_1_AAAI_CelebVHQ_11.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/audio_scale/0.3_wukong_case_3_AAAI_CelebVHQ_18.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<h3 class="title is-4"><br>Audio Scale = 1</h3>
+<section class="hero is-light is-small"  style="height: 100%;">
+  <div class="hero-body"  style="height: 100%;">
+    <div class="container"  style="height: 100%;">
+      <div id="results-carousel" class="carousel results-carousel"  style="height: 100%;">
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/audio_scale/1_20_AAAI_MultiTalk_1.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/audio_scale/1_639a87a227c0a700193e3907_AAAI_VoxCeleb_10.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/audio_scale/1_wukong_case_1_AAAI_CelebVHQ_11.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/audio_scale/1_wukong_case_3_AAAI_CelebVHQ_18.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<h3 class="title is-4"><br>Audio Scale = 2</h3>
+<section class="hero is-light is-small"  style="height: 100%;">
+  <div class="hero-body"  style="height: 100%;">
+    <div class="container"  style="height: 100%;">
+      <div id="results-carousel" class="carousel results-carousel"  style="height: 100%;">
+        
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/audio_scale/2_20_AAAI_MultiTalk_1.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/audio_scale/2_639a87a227c0a700193e3907_AAAI_VoxCeleb_10.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/audio_scale/2_wukong_case_1_AAAI_CelebVHQ_11.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/audio_scale/2_wukong_case_3_AAAI_CelebVHQ_18.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<h2 class="title is-3 " align="center"><br>Motion Amplitude Adjustment</h2>
+<h3 class="title is-4"><br>Motion Amplitude = 0</h3>
+<section class="hero is-light is-small"  style="height: 100%;">
+  <div class="hero-body"  style="height: 100%;">
+    <div class="container"  style="height: 100%;">
+      <div id="results-carousel" class="carousel results-carousel"  style="height: 100%;">
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/motion_relax/0_17-astonishing-facts-about-hidetaka-miyazaki-1697338601_4_006.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/motion_relax/0_639a87a227c0a700193e3907_AAAI_Ours_29.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/motion_relax/0_u=1698759698,3671050&fm=253&fmt=auto&app=138&f=JPEG_AAAI_MultiTalk_5.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/motion_relax/0_woman-6328478_960_720_AAAI_CelebVHQ_32.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<h3 class="title is-4"><br>Motion Amplitude = 0.5</h3>
+<section class="hero is-light is-small"  style="height: 100%;">
+  <div class="hero-body"  style="height: 100%;">
+    <div class="container"  style="height: 100%;">
+      <div id="results-carousel" class="carousel results-carousel"  style="height: 100%;">
+        
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/motion_relax/0.5_17-astonishing-facts-about-hidetaka-miyazaki-1697338601_4_006.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/motion_relax/0.5_639a87a227c0a700193e3907_AAAI_Ours_29.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/motion_relax/0.5_u=1698759698,3671050&fm=253&fmt=auto&app=138&f=JPEG_AAAI_MultiTalk_5.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/motion_relax/0.5_woman-6328478_960_720_AAAI_CelebVHQ_32.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<h3 class="title is-4"><br>Motion Amplitude = 1</h3>
+<section class="hero is-light is-small"  style="height: 100%;">
+  <div class="hero-body"  style="height: 100%;">
+    <div class="container"  style="height: 100%;">
+      <div id="results-carousel" class="carousel results-carousel"  style="height: 100%;">
+        
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v-a/17-astonishing-facts-about-hidetaka-miyazaki-1697338601_4_006.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v-a/639a87a227c0a700193e3907_AAAI_Ours_29.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v-a/u=1698759698,3671050&fm=253&fmt=auto&app=138&f=JPEG_AAAI_MultiTalk_5.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-steve">
+          <video poster="" autoplay controls muted loop playsinline style="height: 100%;">
+            <source src="./static/videos/v-a/woman-6328478_960_720_AAAI_CelebVHQ_32.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{yang2024megactorsigmaunlockingflexiblemixedmodal,
+      title={MegActor-$\Sigma$: Unlocking Flexible Mixed-Modal Control in Portrait Animation with Diffusion Transformer}, 
+      author={Shurong Yang and Huadong Li and Juhao Wu and Minhao Jing and Linze Li and Renhe Ji and Jiajun Liang and Haoqiang Fan and Jin Wang},
+      year={2024},
+      eprint={2408.14975},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2408.14975}, 
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+              target="_blank">Academic Project Page Template</a> which was adopted from the <a
+              href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer.
+            <br> This website is licensed under a <a rel="license"
+              href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
